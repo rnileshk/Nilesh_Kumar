@@ -3,6 +3,7 @@ import api from "../api";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     api.get("/api/projects").then((res) => setProjects(res.data)).catch(() => {});
@@ -23,7 +24,8 @@ function Projects() {
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="h-56 w-full object-cover"
+                onClick={() => setSelectedImage(project.imageUrl)}
+                className="h-44 w-full rounded-2xl object-cover mb-5 cursor-pointer hover:scale-105 transition"
               />
             ) : (
               <div className="h-56 bg-white/5 flex items-center justify-center text-slate-500">
@@ -52,6 +54,27 @@ function Projects() {
           </div>
         ))}
       </div>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 p-6 md:p-12"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute right-6 top-6 rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/20"
+          >
+            ✕
+          </button>
+
+          <img
+            src={selectedImage}
+            alt="Certificate Preview"
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[85vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl"
+          />
+        </div>
+      )}
     </section>
   );
 }
