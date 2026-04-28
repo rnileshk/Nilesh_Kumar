@@ -182,7 +182,7 @@ function Hero() {
               <div className="hero-scan"></div>
 
               <img
-                src={about.profileImageUrl || "/me.jpeg"}
+                src={"/me.jpeg"}
                 alt="profile"
                 className="hero-photo"
               />
