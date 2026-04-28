@@ -108,7 +108,7 @@ function Hero() {
             transition={{ delay: 0.5, duration: 0.75 }}
             className="mt-6 max-w-2xl text-lg leading-8 text-slate-300"
           >
-            Passionate Java Full Stack Developer with expertise in Spring Boot and React. I build scalable web applications and love crafting clean, efficient code. Always eager to learn and take on new challenges.
+            I build scalable full-stack applications using Java Spring Boot & React, solving real-world problems with clean and efficient architecture.
           </motion.p>
 
           <div className="mt-6 flex gap-4">
