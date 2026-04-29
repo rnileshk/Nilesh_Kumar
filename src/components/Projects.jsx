@@ -35,8 +35,8 @@ function Projects() {
 
             <div className="p-6">
               <h3 className="text-2xl font-bold">{project.title}</h3>
-              <p className="mt-3 text-slate-300">{project.description}</p>
               <p className="mt-4 text-sm text-blue-300">{project.techStack}</p>
+              <p className="mt-3 text-slate-300">{project.description}</p>
 
               <div className="mt-6 flex gap-4">
                 {project.githubUrl && (
